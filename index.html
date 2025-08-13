@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portafolio - Andrés Sánchez | Analista de Sistemas</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0f1724;
+      --card: linear-gradient(135deg,#0b1220aa, #11203aaa);
+      --glass: rgba(255,255,255,0.04);
+      --accent: linear-gradient(90deg,#06b6d4,#7c3aed);
+      --muted: #9aa4b2;
+      --max-width: 1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,0.08), transparent),
+                  radial-gradient(1000px 400px at 95% 90%, rgba(6,182,212,0.06), transparent),
+                  var(--bg);
+      color:#e6eef6;
+      padding:40px 20px;
+      display:flex;justify-content:center;
+    }
+    .container{
+      width:100%;max-width:var(--max-width);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:14px; padding:28px; box-shadow: 0 10px 40px rgba(2,6,23,0.7);
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    header{display:flex;gap:20px;align-items:center;justify-content:space-between;margin-bottom:18px;}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{width:64px;height:64px;border-radius:12px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:800;font-family: 'JetBrains Mono', monospace;color:white;box-shadow:0 6px 20px rgba(124,58,237,0.18)}
+    .brand h1{margin:0;font-size:18px;letter-spacing:0.3px}
+    .brand p{margin:0;color:var(--muted);font-size:13px}
+    nav{display:flex;gap:12px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px;font-size:14px}
+    nav a:hover{color:white;background:rgba(255,255,255,0.02)}
+    main{display:grid;grid-template-columns:1fr 360px;gap:22px}
+    .card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .hero{display:flex;gap:18px;align-items:center}
+    .avatar{width:116px;height:116px;border-radius:14px;background:linear-gradient(180deg,#15304a,#09202a);display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:700;color:#dfeefe;border:1px solid rgba(255,255,255,0.04)}
+    .hero h2{margin:0 0 6px 0}
+    .hero p{margin:0;color:var(--muted)}
+    .tagline{margin-top:12px;color:var(--muted);font-size:14px}
+    .section{margin-top:16px}
+    .section h3{margin:0 0 12px 0;font-size:15px}
+    .skills{display:flex;flex-wrap:wrap;gap:8px}
+    .skill{background:var(--glass);padding:8px 10px;border-radius:10px;font-size:13px;color:var(--muted)}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .proj{background:linear-gradient(180deg, rgba(255,255,255,0.012), rgba(255,255,255,0.01));padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+    .proj h4{margin:0 0 8px 0}
+    .proj p{margin:0;color:var(--muted);font-size:13px}
+    .proj .meta{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+    .chip{background:rgba(255,255,255,0.03);padding:6px 8px;border-radius:8px;font-size:12px;color:var(--muted)}
+    .experience{display:flex;flex-direction:column;gap:10px}
+    .exp-item{padding:10px;border-radius:8px;background:rgba(255,255,255,0.01);border:1px solid rgba(255,255,255,0.02)}
+    .exp-item h4{margin:0;font-size:14px}
+    .exp-item p{margin:6px 0 0 0;color:var(--muted);font-size:13px}
+    aside{position:sticky;top:28px}
+    .contact-card{display:flex;flex-direction:column;gap:10px}
+    .contact-card a{display:block;text-decoration:none;padding:10px;border-radius:10px;background:linear-gradient(90deg,#071126, #071229);border:1px solid rgba(255,255,255,0.02);color:#dff6ff;font-weight:600}
+    .contact-card a.small{font-weight:400;color:var(--muted);background:transparent;border:none;padding:6px 0}
+    .stats{display:flex;gap:12px;margin-top:12px}
+    .stat{flex:1;background:rgba(255,255,255,0.02);padding:12px;border-radius:10px;text-align:center}
+    .stat h4{margin:0;font-size:20px}
+    .stat p{margin:6px 0 0 0;color:var(--muted);font-size:13px}
+    footer{margin-top:18px;padding-top:12px;border-top:1px dashed rgba(255,255,255,0.02);display:flex;justify-content:space-between;align-items:center}
+    .badges{display:flex;gap:10px}
+    .badge{padding:8px 12px;border-radius:999px;background:linear-gradient(90deg,#0b1220,#12203a);color:var(--muted);font-size:13px}
+    @media (max-width:980px){main{grid-template-columns:1fr} aside{position:static}}
+    .logo, .avatar{transition:transform .35s cubic-bezier(.2,.9,.2,1)}
+    .logo:hover,.avatar:hover{transform:translateY(-6px) scale(1.02)}
+    .cta{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,#06b6d4,#7c3aed);color:#07202b;font-weight:700;text-decoration:none;text-align:center}
+    @media print{body{background:white;color:black} .container{box-shadow:none;border:none;padding:12px} nav, .cta, .stats{display:none}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">AS</div>
+        <div>
+          <h1>Andrés Sánchez</h1>
+          <p>Analista de Sistemas · Diseño y optimización de software</p>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">Sobre mí</a>
+        <a href="#projects">Proyectos</a>
+        <a href="#experience">Experiencia</a>
+        <a href="#contact">Contacto</a>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <div class="card hero">
+          <div class="avatar">AS</div>
+          <div style="flex:1">
+            <h2>Analista de Sistemas</h2>
+            <p class="muted">Diseño, desarrollo y mejora de sistemas. Especialista en análisis de requerimientos, modelado de datos y aplicaciones escalables.</p>
+            <div class="tagline">Busco aportar soluciones que mejoren la eficiencia y la calidad del software.</div>
+            <div style="margin-top:12px;display:flex;gap:10px;align-items:center">
+              <a class="cta" href="cv-andres-sanchez.pdf" download>📄 Descargar CV</a>
+              <a class="cta" href="https://github.com/Andressan212 "target="_blank">💻 GitHub</a>
+              <a class="cta" href="https://www.linkedin.com/in/TU-USUARIO" target="_blank">🔗 LinkedIn</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card section" id="about">
+          <h3>Perfil profesional</h3>
+          <p style="color:var(--muted);margin:0">Analista de Sistemas con experiencia práctica en proyectos de e-commerce, plataformas educativas y sistemas de gestión. Hábil en levantar requerimientos, diseñar modelos de datos, documentar APIs y entregar software mantenible. Familiar con metodologías ágiles y pruebas básicas de software.</p>
+        </div>
+
+        <div class="card section">
+          <h3>Habilidades técnicas</h3>
+          <div class="skills">
+            <span class="skill">ASP.NET</span>
+            <span class="skill">Visual Basic .NET</span>
+            <span class="skill">HTML / CSS / JS</span>
+            <span class="skill">SQL Server / MySQL</span>
+            <span class="skill">Modelado ER</span>
+            <span class="skill">Git / Versionado</span>
+            <span class="skill">REST APIs</span>
+            <span class="skill">Testing básico</span>
+          </div>
+        </div>
+
+        <div class="card section" id="projects">
+          <h3>Proyectos destacados</h3>
+          <div class="projects">
+            <div class="proj">
+              <h4>Sistema de E-commerce</h4>
+              <p>Plataforma de ventas con gestión de productos, subida de imágenes y carrito. Precios especiales para revendedores.</p>
+              <div class="meta"><span class="chip">ASP.NET</span><span class="chip">SQL Server</span><span class="chip">C# / VB</span></div>
+            </div>
+            <div class="proj">
+              <h4>Plataforma Educativa</h4>
+              <p>Clon tipo Classroom con foros, calendario y recursos para docentes y alumnos.</p>
+              <div class="meta"><span class="chip">HTML/CSS/JS</span><span class="chip">UX</span></div>
+            </div>
+            <div class="proj">
+              <h4>Sistema de Ventas con Revendedores</h4>
+              <p>Aplicación de escritorio para gestionar stock, precios por cantidad y venta individual.</p>
+              <div class="meta"><span class="chip">Visual Basic</span><span class="chip">SQL</span></div>
+            </div>
+            <div class="proj">
+              <h4>Scripts de Mantenimiento</h4>
+              <p>Automatizaciones y utilidades para mantenimiento de equipos y despliegues.</p>
+              <div class="meta"><span class="chip">Scripting</span><span class="chip">DevOps</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card section" id="experience">
+          <h3>Experiencia</h3>
+          <div class="experience">
+            <div class="exp-item">
+              <h4>Desarrollador / Analista (Proyectos personales)</h4>
+              <p>2023 - 2025 · Diseño y ejecución de sistemas completos: levantamiento de requisitos, modelado DB, desarrollo e implementación.</p>
+            </div>
+            <div class="exp-item">
+              <h4>Técnico en Reparación de PC</h4>
+              <p>Soporte y reparación, optimización y mantenimiento preventivo de equipos de escritorio y portátiles.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside>
+        <div class="card contact-card" id="contact">
+          <h3>Contacto</h3>
+          <a href="mailto:tu-email@ejemplo.com">andressanchezize@gmail.com</a>
+          <a class="small">Tel: +54 9 [3878-541341]</a>
+          <a class="cta" href="cv-andres-sanchez.pdf" download>📄 Descargar CV</a>
+          <a class="cta" href="https://github.com/Andressan212" target="_blank">💻 GitHub</a>
+          <a class="cta" href="https://www.linkedin.com/in/TU-USUARIO" target="_blank">🔗 LinkedIn</a>
+          <div class="stats">
+            <div class="stat"><h4>9+</h4><p>Proyectos</p></div>
+            <div class="stat"><h4>5+</h4><p>Años experiencia</p></div>
+            <!--<div class="stat"><h4>100%</h4><p>Compromiso</p></div>-->
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h3>Educación</h3>
+          <p class="muted" style="margin:0">Analista de Sistemas · Instituto [Facundo de Zuviria] · finalizado</p>
+        </div>
+        <div class="card" style="margin-top:12px">
+          <h3>Educación</h3>
+          <p class="muted" style="margin:0">Profesorado de Informatica · Instituto [Facundo de Zuviria] · En Curso</p>
+        </div>
+        <div class="card" style="margin-top:12px">
+          <h3>Certificaciones</h3>
+          <p class="muted" style="margin:0">Cursos en SQL, .NET, java, python, desarrollo web y seguridad básica.</p>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <div class="badges">
+        <div class="badge">Analista de Sistemas</div>
+        <div class="badge">Desarrollo · Modelado · Testing</div>
+      </div>
+      <div style="color:var(--muted);font-size:13px">Diseñado por Andrés Sánchez · 2025</div>
+    </footer>
+  </div>
+</body>
+</html>
